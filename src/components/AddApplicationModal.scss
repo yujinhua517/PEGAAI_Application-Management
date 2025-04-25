@@ -1,0 +1,179 @@
+// === 背景遮罩（灰底 + 半透明深藍）===
+.modal-backdrop {
+  position: fixed;
+  inset: 0; // 等同於 top:0; right:0; bottom:0; left:0
+  background: rgba(15, 23, 42, 0.5); // 深藍透明遮罩
+  display: flex;
+  justify-content: center; // 水平置中
+  align-items: center;     // 垂直置中
+  z-index: 999;            // 疊在畫面最上層
+}
+
+// === Modal 主要視窗樣式 ===
+.modal {
+  background: white; // 白色背景
+  border-radius: 10px;
+  width: 460px;
+  min-height: 540px;
+  padding: 2rem 2rem 1.5rem;
+  position: relative;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); // 柔和陰影
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// === 右上角關閉按鈕（✕）===
+.close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+// === Modal 標題 ===
+h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #0f172a;
+}
+
+// === 標題下方的描述說明 ===
+.desc {
+  color: #64748b; // 灰藍文字
+  font-size: 0.875rem;
+}
+
+// === 整體表單區塊樣式 ===
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;     // 每欄間距
+  flex-grow: 1;
+
+  // === 每一個欄位區塊（橫向排列） ===
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    label {
+      flex: 0 0 130px; // 固定寬度欄
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #0f172a;
+      text-align: right;
+    }
+
+    input {
+      flex: 1;
+      font-size: 0.92rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #f9fafb;
+      height: 30px;
+    }
+  }
+
+  // === Modal 底部按鈕列 ===
+  .modal-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      background-color: transparent;
+      color: #0f172a;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      border: 1.5px solid #0f172a;
+      cursor: pointer;
+      min-width: 65px;
+      text-align: center;
+
+      &:hover {
+        background-color: #1e293b; // 深藍底
+        color: #ffffff;
+      }
+    }
+  }
+
+  // === 固定樣式按鈕（Next用）===
+  .static-button {
+    background-color: #1e293b !important; // 深藍底
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    border: 1.5px solid #0f172a;
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+// === 頁面上方的步驟指示區 ===
+.step-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.step-label {
+  font-size: 0.88rem;
+  color: #64748b; // 灰藍色
+  margin-bottom: 0.25rem;
+}
+
+// === 兩個步驟的小進度條 ===
+.step-bar {
+  display: flex;
+  gap: 4px;
+
+  .step {
+    flex: 1;
+    height: 4px;
+    background: #e2e8f0; // 淡灰底
+    border-radius: 2px;
+
+    &.active {
+      background: #0f172a; // 深藍表示當前步驟
+    }
+  }
+}
+
+// === 錯誤欄位樣式：紅框 + 淺紅底 ===
+input.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+// === 錯誤提示訊息文字（紅字）===
+.error-text {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  margin-left: 130px; // 對齊 label
+}
+
+// === 檔案上傳預覽區 ===
+.file-preview {
+  margin-left: 130px; // 對齊欄位
+  font-size: 0.85rem;
+
+  a {
+    color: #2563eb; // 藍色超連結
+    text-decoration: underline;
+  }
+}

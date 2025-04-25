@@ -1,0 +1,100 @@
+// === 背景遮罩：讓 Modal 彈窗置中，背景變暗 ===
+.modal-backdrop {
+  position: fixed;         // 固定在畫面上
+  inset: 0;                // 上下左右皆為 0，佔滿全螢幕
+  background: rgba(15, 23, 42, 0.5); // 深藍色半透明遮罩
+  display: flex;           // 使用 flex 置中
+  justify-content: center; // 水平置中
+  align-items: center;     // 垂直置中
+  z-index: 999;            // 疊在最上層
+}
+
+// === Modal 主視窗 ===
+.modal {
+  background: white;             // 白底
+  border-radius: 10px;           // 圓角
+  width: 420px;                  // 固定寬度
+  padding: 2rem;                 // 內邊距
+  position: relative;           // 讓 close-btn 可以絕對定位
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); // 柔和陰影
+
+  // === Modal 標題文字 ===
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #0f172a; // 深藍字色
+  }
+
+  // === 右上角的關閉按鈕（✕） ===
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  // === 單一表單欄位區塊 ===
+  .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+
+    label {
+      width: 130px;         // 標籤固定寬度
+      font-weight: 500;
+      color: #0f172a;
+      text-align: right;    // 文字靠右對齊
+      margin-right: 1rem;   // 與 input 間距
+    }
+
+    input {
+      flex: 1;                      // 輸入框填滿剩餘寬度
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;    // 淺藍灰邊框
+      font-size: 0.9rem;
+      background: #f9fafb;          // 非全白背景，較柔和
+    }
+  }
+
+  // === 檔案名稱預覽區塊 ===
+  .file-preview {
+    margin-left: 130px;       // 與 input 對齊
+    font-size: 0.85rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  // === 錯誤提示紅字文字 ===
+  .error-text {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: -0.5rem;
+    margin-left: 130px; // 對齊欄位
+  }
+
+  // === Modal 底部按鈕列 ===
+  .modal-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+    .button {
+      background-color: #0f172a; // 深藍按鈕
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #1e293b; // hover 更深藍
+      }
+    }
+  }
+}

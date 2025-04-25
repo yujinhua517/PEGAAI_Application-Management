@@ -1,0 +1,63 @@
+.navbar {
+    background-color: #0f172a;
+    padding: 1rem 2rem;
+    color: white;
+  
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .logo {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+  
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      
+        .icon-img {
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
+        }
+      
+        .user-icon {
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+      
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+      
+  
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1rem;
+  
+      .nav-item {
+        text-decoration: none;
+        color: #cbd5e1;
+        font-size: 0.95rem;
+  
+        &.active {
+          color: #facc15;
+          font-weight: 600;
+        }
+  
+        &:hover {
+          color: #facc15;
+        }
+      }
+    }
+
+    
+  }
+  

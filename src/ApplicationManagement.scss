@@ -1,0 +1,186 @@
+.application-management {
+  padding: 2rem; // 四周內邊距，讓內容不要緊貼邊界
+  min-height: 100vh; // 讓整頁至少填滿整個瀏覽器高度
+  display: flex;
+  flex-direction: column; // 子項目垂直排列
+  background-color: #01111f; // 深藍底色，營造科技感
+  color: #ffffff; // 頁面整體預設文字顏色為白色
+
+  // === Toast 提示訊息樣式 ===
+  .toast-notification {
+    position: absolute;
+    top: 6rem; // 從頁面頂端往下 6rem 顯示
+    left: 50%; // 水平置中起始點
+    transform: translateX(-50%); // 真正水平置中
+    padding: 0.75rem 2rem; // 上下 + 左右內邊距
+    border-radius: 4px; // 輕微圓角
+    font-size: 0.9rem;
+    z-index: 1000; // 蓋在其他元件上
+    transition: opacity 0.3s ease; // 淡入淡出動畫
+
+    // 成功提示樣式：淡綠底、深綠文字與邊框
+    &.success {
+      background-color: rgba(167, 240, 209, 0.9);
+      color: #004d40;
+      border: 1px solid #00796b;
+    }
+
+    // 錯誤提示樣式：淡紅底、深紅文字與邊框
+    &.error {
+      background-color: rgba(255, 205, 210, 0.9);
+      color: #b71c1c;
+      border: 1px solid #c62828;
+    }
+  }
+
+  // === 頁面標題列（左側標題 + 右側新增按鈕）===
+  .header-row {
+    display: flex;
+    justify-content: space-between; // 左右兩端對齊
+    align-items: center; // 垂直置中
+    margin-bottom: 2rem; // 與下方表格保持距離
+
+    .title {
+      font-size: 1.75rem; // 較大字體
+      font-weight: 600; // 粗體
+      margin: 0;
+    }
+
+    .icon-button {
+      background: transparent; // 無底色
+      border: none; // 無邊框
+      cursor: pointer; // 滑鼠變手指
+      padding: 0.5rem; // 按鈕範圍擴大
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 24px;
+        height: 24px; // 圖示尺寸統一為 24px
+      }
+    }
+  }
+
+  // === 表格外層容器 ===
+  .table-container {
+    background-color: #081724; // 深藍底色
+    border-radius: 8px; // 圓角設計
+    overflow: hidden; // 超出區域裁切
+    flex: 1; // 填滿剩餘空間（彈性）
+  }
+
+  // === 主表格（應用清單）樣式 ===
+  .app-table {
+    width: 100%; // 滿版寬度
+    border-collapse: collapse; // 合併表格邊線
+
+    th {
+      background-color: #1f3242; // 表頭底色
+      color: #ffffff;
+      font-weight: 500;
+      text-align: left;
+      padding: 1rem;
+      border: none;
+    }
+
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid #132736; // 每列下方細線
+    }
+
+    // 每一列的背景色 + hover 效果
+    tbody tr {
+      background-color: #293b4d;
+
+      &:hover {
+        background-color: #344c63; // 滑過變色
+      }
+    }
+
+    .clickable-row {
+      cursor: pointer; // 滑鼠變成手指提示可點擊
+    }
+
+    .no-data-row {
+      text-align: center;
+      color: #a0a0a0;
+      padding: 2rem; // 資料為空時的提醒列
+    }
+  }
+
+  // === 展開區塊：應用的版本資料列 ===
+  .expanded-row {
+    background-color: #273440 !important; // 強制覆蓋其他背景
+
+    > td {
+      padding: 0 !important;
+      background-color: #273440;
+    }
+
+    // === 內嵌版本資料的表格 ===
+    .version-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0;
+
+      thead tr {
+        background-color: #222e3b; // 表頭底色較深
+      }
+
+      tbody tr {
+        background-color: #273440;
+
+        &:hover {
+          background-color: #344c63;
+        }
+      }
+
+      th {
+        background-color: #222e3b;
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+      }
+
+      td {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #1f3242;
+      }
+    }
+
+    // === 新增版本按鈕所在的區域 ===
+    .add-version-row {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      background-color: #273440;
+      margin-top: 0;
+    }
+
+    // === 新增版本按鈕樣式 ===
+    .add-version-btn {
+      background-color: #1a2c3d;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 1.5rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+
+      // 加號圖示（純文字符號）加在按鈕左邊
+      &:before {
+        content: "+";
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+
+      &:hover {
+        background-color: #223b52;
+      }
+    }
+  }
+}
