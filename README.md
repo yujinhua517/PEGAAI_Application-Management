@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Application Management – UI/UX + React 前端作業
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+本專案為一個應用程式與版本管理系統的前端作業，整合 UI/UX 設計（Figma）與 React 前端實作，旨在優化使用者在建立 Application 與 Version 流程上的體驗。
 
-## Available Scripts
+## 🔗 GitHub Repository
+https://github.com/yujinhua517/PEGAAI_Application-Management
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🧩 專案功能說明
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 支援 Application 新增、編輯
+- 支援多版本 Version 新增（含動態展開動畫）
+- 使用雙步驟 Modal 表單（Step 1：Application / Step 2：Version）
+- 提供錯誤提示、欄位驗證與 Toast 提示訊息
+- 採用深色系 UI 設計，整合 icon 與 hover 動畫
+- 使用 SCSS 實作模組化樣式
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🎨 UI/UX 設計（Figma）
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+設計重點：
+- 針對使用者建立 Application 時流程斷點進行優化
+- 將 Application / Version 建立操作整合為分步驟引導
+- 簡化操作流程並強化欄位引導與互動回饋（如 Toast）
 
-### `npm run build`
+🔗 [Figma 設計連結](https://www.figma.com/design/RfmXN1YsYfF9RpRxmrd1Gr/PEGAAI?node-id=185-1414&t=h56qVDN5MqQApOCX-1)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ 安裝與執行方式
 
-### `npm run eject`
+```bash
+git clone https://github.com/yujinhua517/PEGAAI_Application-Management.git
+cd application-ui
+npm install
+npm start
+npm run server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🔗 執行位置說明：
+React 前端頁面：
+👉 http://localhost:3000
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+mock API 伺服器（使用 json-server）：
+👉 http://localhost:3001/applications
